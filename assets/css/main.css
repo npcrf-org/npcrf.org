@@ -108,16 +108,13 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 .lede { color: var(--muted); margin: 1.6rem 0 0; }
 .lede p { margin: 0.2rem 0; }
 .post-list { list-style: none; padding: 0; margin: 1.5rem 0; }
-/* Each closed article is a framed card; alternating surface tones keep
-   adjacent cards visually separate in both themes. */
+/* Each closed article is a framed card. */
 .post-item {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem 1.25rem 1.1rem;
   margin-bottom: 1rem;
 }
-.post-item:nth-child(odd) { background: var(--surface); }
-.post-item:nth-child(even) { background: var(--bg); }
 .post-item:hover { border-color: var(--muted); }
 .post-item-title { font-size: 1.25rem; margin: 0 0 0.15rem; }
 .post-item-title a { color: var(--fg); text-decoration: none; }
