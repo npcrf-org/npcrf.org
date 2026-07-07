@@ -40,7 +40,7 @@
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 4.5rem; }
 body {
   margin: 0;
   background: var(--bg);
@@ -77,7 +77,7 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 .muted { color: var(--muted); }
 
 /* ---------- Accessibility helpers ---------- */
-.skip-link { position: absolute; left: -999px; top: 0; background: var(--bg); color: var(--fg); padding: 0.5rem 1rem; z-index: 10; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--bg); color: var(--fg); padding: 0.5rem 1rem; z-index: 30; }
 .skip-link:focus { left: 0; }
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
@@ -85,7 +85,14 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 }
 
 /* ---------- Header ---------- */
-.site-header { border-bottom: 1px solid var(--border); }
+/* The header stays pinned so the menu is reachable mid-article. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
 .site-header-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1rem; padding-block: 0.9rem; }
 .wordmark { font-weight: 700; font-size: 1.05rem; color: var(--fg); text-decoration: none; letter-spacing: 0.01em; }
 .site-nav { display: flex; flex-wrap: wrap; gap: 0.1rem 0.9rem; margin-inline-start: auto; font-size: 0.95rem; }
@@ -162,7 +169,7 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 }
 
 /* ---------- Footer ---------- */
-.site-footer { border-top: 1px solid var(--border); margin-top: 3.5rem; padding-block: 1.4rem 2rem; color: var(--muted); font-size: 0.88rem; }
+.site-footer { border-top: 1px solid var(--border); margin-top: 3.5rem; padding-block: 1.4rem 2rem; color: var(--muted); font-size: 0.8rem; }
 .site-footer p { margin: 0.35rem 0; }
 .site-footer a { color: var(--muted); }
 
