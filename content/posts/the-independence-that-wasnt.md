@@ -195,5 +195,3 @@ Veracini, Lorenzo. *Settler Colonialism: A Theoretical Overview*. Basingstoke: P
 Wolfe, Patrick. *Settler Colonialism and the Transformation of Anthropology*. London: Cassell, 1999.
 
 Wolfe, Patrick. "Settler Colonialism and the Elimination of the Native". *Journal of Genocide Research*, vol. 8, no. 4, 2006, pp. 387-409. DOI 10.1080/14623520601056240.
-
-*Nuno Faria · Patrimonial and Forensic Loss Adjuster · Vila Nova de Gaia, July 7, 2026*
