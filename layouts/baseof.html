@@ -35,8 +35,11 @@
   <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
   <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
   {{- end }}
-  {{ with resources.Get "css/main.css" }}{{ with . | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{/* CSS is inlined so HTML and styles ship as one atomic unit: a cached
+       page can never point at a fingerprinted stylesheet that a newer deploy
+       has already removed (which rendered the page unstyled until refresh). */}}
+  {{ with resources.Get "css/main.css" }}{{ with . | minify }}
+  <style>{{ .Content | safeCSS }}</style>
   {{ end }}{{ end }}
 </head>
 <body>
