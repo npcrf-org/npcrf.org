@@ -4,7 +4,7 @@ slug: "contacto"
 description: "Como contactar o npcrf.org: info@npcrf.org, publicado em texto simples."
 ---
 
-Escreva para **info@npcrf.org** ou use esta ligação: [info@npcrf.org](mailto:info@npcrf.org).
+Escreva para [**info@npcrf.org**](mailto:info@npcrf.org).
 
 O endereço é publicado em texto simples, sem formulário de contacto e sem ofuscação, para permanecer acessível a todos, incluindo quem use leitores de ecrã, navegadores em modo de texto ou navegação sem JavaScript.
 

@@ -3,7 +3,7 @@ title: "Contact"
 description: "How to reach npcrf.org: info@npcrf.org, published in plain text."
 ---
 
-Write to **info@npcrf.org**, or use this link: [info@npcrf.org](mailto:info@npcrf.org).
+Write to [**info@npcrf.org**](mailto:info@npcrf.org).
 
 The address is published in plain text, with no contact form and no obfuscation, so that it remains accessible to everyone, including readers using screen readers, text-mode browsers or no JavaScript.
 
