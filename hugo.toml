@@ -39,7 +39,7 @@ capitalizeListTitles = false
 [params]
   # GoatCounter site code: the SUBDOMAIN part of https://SUBDOMAIN.goatcounter.com.
   # Leave empty to disable analytics entirely (the footer privacy note follows it).
-  goatcounter = ""
+  goatcounter = "npcrf-org"
 
   # Public repository URL, shown in the footer.
   repository = "https://github.com/npcrf-org/npcrf.org"
