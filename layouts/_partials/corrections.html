@@ -1,0 +1,13 @@
+{{- /* Visible record of post-publication corrections (params.corrections). */ -}}
+{{- with .Params.corrections -}}
+<aside class="corrections">
+  <h2>Corrections</h2>
+  <ol>
+    {{- range . }}
+    {{- $d := .date -}}
+    {{- if and $d (ne (printf "%T" $d) "string") }}{{ $d = $d.Format "2006-01-02" }}{{ end }}
+    <li>{{ with $d }}<time datetime="{{ . }}">{{ . }}</time>: {{ end }}{{ .note }}</li>
+    {{- end }}
+  </ol>
+</aside>
+{{- end -}}

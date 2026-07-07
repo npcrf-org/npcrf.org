@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <div class="content">{{ .Content }}</div>
+  <div class="search-ui" id="search">
+    <pagefind-input></pagefind-input>
+    <pagefind-summary></pagefind-summary>
+    <pagefind-results></pagefind-results>
+  </div>
+  <noscript><p>Search requires JavaScript. You can browse the <a href="{{ "/archive/" | relURL }}">archive</a> instead.</p></noscript>
+  <link rel="stylesheet" href="{{ "pagefind/pagefind-component-ui.css" | relURL }}">
+  <script src="{{ "pagefind/pagefind-component-ui.js" | relURL }}" type="module"
+    onerror="document.getElementById('search').textContent='The search index has not been built yet; it is generated during deployment.'"></script>
+</article>
+{{ end }}

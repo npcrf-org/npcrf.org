@@ -1,0 +1,13 @@
+# Hugo build output
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Local tool binaries (hugo, pagefind); see README for setup
+bin/
+
+# Node (Pagefind runs via npx in CI)
+node_modules/
+
+# macOS
+.DS_Store

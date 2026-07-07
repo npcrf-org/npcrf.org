@@ -1,0 +1,23 @@
+{{- /* Mandatory sources section: renders params.sources and warns at build
+time when a published article has none (see the methodology). */ -}}
+{{- with .Params.sources -}}
+<section class="sources" data-pagefind-ignore>
+  <h2>Sources</h2>
+  <ol>
+    {{- range . }}
+    <li>
+      {{- with .title }}{{ . }} — {{ end -}}
+      <a href="{{ .url }}">{{ .url }}</a>
+      {{- $acc := .accessed -}}
+      {{- if $acc -}}
+        {{- if ne (printf "%T" $acc) "string" }}{{ $acc = $acc.Format "2006-01-02" }}{{ end }} (accessed {{ $acc }})
+      {{- end -}}
+    </li>
+    {{- end }}
+  </ol>
+</section>
+{{- else -}}
+  {{- if and (eq .Section "posts") (not .Draft) -}}
+    {{- warnf "npcrf: article %q has no sources in front matter; the methodology requires a sources section" .Path -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,10 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Articles and all other text content are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; the site's source code is released under the <a href="https://opensource.org/license/mit/">MIT License</a>. Details on the <a href="{{ "/license/" | relURL }}">License</a> page.</p>
+    {{ if site.Params.goatcounter }}
+    <p>Privacy: page views are counted with GoatCounter, a cookie-free analytics tool that stores no personal data.</p>
+    {{ end }}
+    <p>© 2026 npcrf.org · <a href="{{ "index.xml" | relURL }}">RSS</a>{{ with site.Params.repository }} · <a href="{{ . }}">Source code</a>{{ end }}</p>
+  </div>
+  {{ partial "analytics.html" . }}
+</footer>

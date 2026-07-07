@@ -1,0 +1,160 @@
+/* npcrf.org — bespoke minimal theme. System fonts only; no frameworks. */
+
+/* ---------- Theme palettes ----------
+   Light is the base. Dark applies (a) via prefers-color-scheme when no manual
+   choice was made, and (b) via [data-theme="dark"] when chosen manually.
+   All pairs meet WCAG AA contrast on their backgrounds. */
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #59636e;
+  --accent: #0550ae;
+  --border: #d1d9e0;
+  --surface: #f6f8fa;
+  --show-sun: none;
+  --show-moon: inline-block;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #9aa4af;
+    --accent: #58a6ff;
+    --border: #30363d;
+    --surface: #161b22;
+    --show-sun: inline-block;
+    --show-moon: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1117;
+  --fg: #e6edf3;
+  --muted: #9aa4af;
+  --accent: #58a6ff;
+  --border: #30363d;
+  --surface: #161b22;
+  --show-sun: inline-block;
+  --show-moon: none;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+/* Reading measure: roughly 65–75 characters per line. */
+.wrap { max-width: 70ch; margin-inline: auto; padding-inline: 1.25rem; }
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+h1, h2, h3, h4 { line-height: 1.25; }
+h1 { font-size: 1.7rem; margin: 1.6rem 0 0.5rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; }
+h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
+
+code, pre, kbd {
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92em;
+}
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; overflow-x: auto; }
+code { background: var(--surface); padding: 0.1em 0.3em; border-radius: 4px; }
+pre code { background: none; padding: 0; }
+
+blockquote { margin: 1rem 0; padding: 0.25rem 1rem; border-left: 3px solid var(--border); color: var(--muted); }
+hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+table { border-collapse: collapse; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+img, video { max-width: 100%; height: auto; }
+figcaption { color: var(--muted); font-size: 0.9rem; }
+.muted { color: var(--muted); }
+
+/* ---------- Accessibility helpers ---------- */
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--bg); color: var(--fg); padding: 0.5rem 1rem; z-index: 10; }
+.skip-link:focus { left: 0; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Header ---------- */
+.site-header { border-bottom: 1px solid var(--border); }
+.site-header-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1rem; padding-block: 0.9rem; }
+.wordmark { font-weight: 700; font-size: 1.05rem; color: var(--fg); text-decoration: none; letter-spacing: 0.01em; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.1rem 0.9rem; margin-inline-start: auto; font-size: 0.95rem; }
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover { color: var(--fg); text-decoration: underline; }
+.site-nav a[aria-current="page"] { color: var(--fg); font-weight: 600; }
+#theme-toggle {
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  color: var(--muted); padding: 0.3rem 0.45rem; cursor: pointer; line-height: 0;
+}
+#theme-toggle:hover { color: var(--fg); border-color: var(--muted); }
+.icon-sun { display: var(--show-sun); }
+.icon-moon { display: var(--show-moon); }
+
+/* ---------- Home and lists ---------- */
+.lede { color: var(--muted); margin: 1.6rem 0 0; }
+.post-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+.post-item { margin-bottom: 1.9rem; }
+.post-item-title { font-size: 1.25rem; margin: 0 0 0.15rem; }
+.post-item-title a { color: var(--fg); text-decoration: none; }
+.post-item-title a:hover { color: var(--accent); text-decoration: underline; }
+.post-item-meta, .post-meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.3rem; }
+.post-item-meta a, .post-meta a { color: var(--muted); }
+.post-item-summary { margin: 0.2rem 0 0; }
+.pager { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 2.5rem 0; font-size: 0.95rem; }
+
+/* ---------- Article ---------- */
+.article-header h1 { margin-bottom: 0.35rem; }
+.content { margin-top: 1.2rem; }
+.sources { margin-top: 2.5rem; border-top: 1px solid var(--border); padding-top: 1rem; font-size: 0.95rem; }
+.sources h2 { margin-top: 0; font-size: 1.1rem; }
+.sources a { overflow-wrap: anywhere; }
+.corrections { margin-top: 2rem; border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; background: var(--surface); font-size: 0.95rem; }
+.corrections h2 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+.comments { margin-top: 2.5rem; border-top: 1px solid var(--border); padding-top: 1.2rem; }
+
+/* ---------- Archive and topics ---------- */
+.archive-year h2 { margin-bottom: 0.6rem; }
+.archive-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.archive-list li { margin: 0.35rem 0; display: flex; gap: 0.9rem; }
+.archive-list time { color: var(--muted); font-variant-numeric: tabular-nums; flex: none; }
+.topics { list-style: none; padding: 0; margin: 1.2rem 0; }
+.topics li { margin: 0.3rem 0; }
+
+/* ---------- Search (Pagefind Component UI theming) ----------
+   The --pf-* variables are bound to the site palette, so the search UI
+   follows the light/dark theme automatically. */
+.search-ui {
+  margin-top: 1.5rem;
+  --pf-text: var(--fg);
+  --pf-text-secondary: var(--muted);
+  --pf-text-muted: var(--muted);
+  --pf-background: var(--bg);
+  --pf-border: var(--border);
+  --pf-border-focus: var(--muted);
+  --pf-hover: var(--surface);
+  --pf-mark: var(--fg);
+  --pf-skeleton: var(--surface);
+  --pf-skeleton-shine: var(--border);
+  --pf-outline-focus: var(--accent);
+  --pf-font: inherit;
+  --pf-border-radius: 6px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--border); margin-top: 3.5rem; padding-block: 1.4rem 2rem; color: var(--muted); font-size: 0.88rem; }
+.site-footer p { margin: 0.35rem 0; }
+.site-footer a { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

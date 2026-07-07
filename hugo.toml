@@ -1,0 +1,83 @@
+# npcrf.org — Hugo site configuration.
+
+baseURL = "https://npcrf.org/"
+locale = "en"
+title = "npcrf.org"
+timeZone = "UTC"
+copyright = "© 2026 npcrf.org"
+
+# Keep the generated HTML free of the Hugo generator meta tag.
+disableHugoGeneratorInject = true
+
+# Keep taxonomy term titles exactly as written in front matter (lowercase tags).
+capitalizeListTitles = false
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+
+# Stable slugs come from front matter; tags publish under /topics/.
+[permalinks.page]
+  posts = "/posts/:slug/"
+[permalinks.taxonomy]
+  tags = "/topics/"
+[permalinks.term]
+  tags = "/topics/:slug/"
+
+[services.rss]
+  limit = 20
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[params]
+  description = "Independent, non-profit publisher of fact-checked, source-backed articles on current affairs and history."
+
+  # GoatCounter site code: the SUBDOMAIN part of https://SUBDOMAIN.goatcounter.com.
+  # Leave empty to disable analytics entirely (the footer privacy note follows it).
+  goatcounter = ""
+
+  # Public repository URL, shown in the footer once it exists. Leave empty to hide.
+  repository = ""
+
+  # giscus comments (https://giscus.app). Fill in after the GitHub repository
+  # exists, Discussions are enabled and the giscus app is installed; all four
+  # values come from the giscus configuration page. Comments stay hidden until
+  # repo, repoId and categoryId are all set.
+  [params.giscus]
+    repo = ""       # e.g. "OWNER/npcrf.org"
+    repoId = ""
+    category = "Announcements"
+    categoryId = ""
+
+[menus]
+  [[menus.main]]
+    name = "Mission"
+    pageRef = "/mission"
+    weight = 10
+  [[menus.main]]
+    name = "Methodology"
+    pageRef = "/methodology"
+    weight = 20
+  [[menus.main]]
+    name = "Archive"
+    pageRef = "/archive"
+    weight = 30
+  [[menus.main]]
+    name = "Topics"
+    url = "/topics/"
+    weight = 40
+  [[menus.main]]
+    name = "Search"
+    pageRef = "/search"
+    weight = 50
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 60
+  [[menus.main]]
+    name = "Support"
+    pageRef = "/support"
+    weight = 70

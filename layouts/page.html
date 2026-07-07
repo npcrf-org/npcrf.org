@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article data-pagefind-body>
+  <header class="article-header">
+    <h1>{{ .Title }}</h1>
+    {{ if eq .Section "posts" }}{{ partial "post-meta.html" . }}{{ end }}
+  </header>
+  <div class="content">
+    {{ .Content }}
+  </div>
+  {{ if eq .Section "posts" }}
+  {{ partial "corrections.html" . }}
+  {{ partial "sources.html" . }}
+  {{ partial "comments.html" . }}
+  {{ end }}
+</article>
+{{ end }}
