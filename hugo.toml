@@ -15,6 +15,10 @@ disableHugoGeneratorInject = true
 # Keep taxonomy term titles exactly as written in front matter (lowercase tags).
 capitalizeListTitles = false
 
+# Tags are written per language (Portuguese tags on .pt.md files); strip
+# accents from auto-generated term paths so "história" → /pt/temas/historia/.
+removePathAccents = true
+
 [pagination]
   pagerSize = 10
 

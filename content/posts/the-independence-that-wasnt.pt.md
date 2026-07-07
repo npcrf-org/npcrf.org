@@ -3,7 +3,7 @@ title: "A independência que não o foi"
 date: 2026-07-07T20:35:00Z
 lastmod: 2026-07-07T20:35:00Z
 slug: "a-independencia-que-nao-o-foi"
-tags: ["history", "settler colonialism", "united states", "indigenous peoples", "sovereignty"]
+tags: ["história", "colonialismo de povoamento", "estados unidos", "povos indígenas", "soberania"]
 draft: false
 description: "Ensaio histórico-político que defende que o 4 de julho de 1776 assinala uma sucessão de soberania entre colonizadores, não uma descolonização."
 sources:
