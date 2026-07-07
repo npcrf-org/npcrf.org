@@ -76,10 +76,12 @@ capitalizeListTitles = false
   name = "Contact"
   pageRef = "/contact"
   weight = 60
-[[languages.en.menus.main]]
-  name = "Support"
-  pageRef = "/support"
-  weight = 70
+# Support menu entry disabled while the page is a draft (no real donation
+# data yet). Restore together with content/support.md.
+# [[languages.en.menus.main]]
+#   name = "Support"
+#   pageRef = "/support"
+#   weight = 70
 
 [languages.pt]
   locale = "pt-PT"
@@ -119,7 +121,9 @@ capitalizeListTitles = false
   name = "Contacto"
   pageRef = "/contact"
   weight = 60
-[[languages.pt.menus.main]]
-  name = "Apoio"
-  pageRef = "/support"
-  weight = 70
+# Entrada de menu Apoio desativada enquanto a página está em rascunho
+# (ainda sem dados reais de doação). Repor junto com content/support.pt.md.
+# [[languages.pt.menus.main]]
+#   name = "Apoio"
+#   pageRef = "/support"
+#   weight = 70

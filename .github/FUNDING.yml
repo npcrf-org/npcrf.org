@@ -1,8 +1,8 @@
 # Funding links shown on the GitHub repository ("Sponsor" button).
-# The github, liberapay and ko_fi fields are commented out until the
-# corresponding accounts exist; uncomment and fill each handle, and keep the
-# same handles published on the Support page.
+# Everything is commented out until the donation accounts exist and the
+# Support page is published (it is currently a draft): uncomment and fill
+# each handle, keeping the same handles published on the Support page.
 # github: [OWNER]        # TODO: GitHub Sponsors handle
 # liberapay: HANDLE      # TODO: Liberapay username
 # ko_fi: HANDLE          # TODO: Ko-fi username
-custom: ["https://npcrf.org/support/"]
+# custom: ["https://npcrf.org/support/"]

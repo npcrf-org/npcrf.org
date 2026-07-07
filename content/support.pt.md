@@ -2,6 +2,11 @@
 title: "Apoio"
 slug: "apoio"
 description: "O npcrf.org é financiado exclusivamente por donativos. Quatro formas de contribuir: Liberapay, Ko-fi, GitHub Sponsors e transferência bancária."
+# Oculta até os identificadores de doação e o IBAN serem reais. Para publicar:
+# pôr draft a false aqui e no support.md, repor as entradas de menu
+# Support/Apoio no hugo.toml, repor as ligações de donativos na missão (en+pt)
+# e descomentar o link custom no .github/FUNDING.yml.
+draft: true
 ---
 
 O npcrf.org é uma organização sem fins lucrativos. O site não tem publicidade nem conteúdo patrocinado; o trabalho é financiado exclusivamente por donativos, que não compram influência sobre o que é publicado (ver a [missão](/pt/missao/)).
