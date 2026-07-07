@@ -150,6 +150,7 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 .year-nav li:nth-child(n+16) { font-size: 0.8rem; }
 .year-nav a { color: var(--fg); text-decoration: none; }
 .year-nav a:hover { color: var(--accent); text-decoration: underline; }
+.year-nav a[aria-current] { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 .archive-year h2 { margin-bottom: 0.6rem; }
 .archive-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
 .archive-list li { margin: 0.35rem 0; display: flex; gap: 0.9rem; }
