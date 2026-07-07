@@ -1,11 +1,14 @@
 ---
 title: "Sobre este site: missão, método e licenças"
 date: 2026-07-07T16:00:00Z
-lastmod: 2026-07-07T16:00:00Z
+lastmod: 2026-07-07T18:30:00Z
 slug: "sobre-este-site"
 tags: ["meta"]
 draft: false
 description: "O que é o npcrf.org, como se verificam aqui os artigos e como estão licenciados o conteúdo e o código."
+corrections:
+  - date: "2026-07-07"
+    note: "Removida a nota que descrevia um sistema de comentários; o site foi lançado sem comentários."
 sources:
   - title: "Creative Commons Attribution 4.0 International, legal code"
     url: "https://creativecommons.org/licenses/by/4.0/legalcode.pt"
@@ -18,9 +21,6 @@ sources:
     accessed: "2026-07-07"
   - title: "Pagefind, static search library"
     url: "https://pagefind.app/"
-    accessed: "2026-07-07"
-  - title: "giscus, comments powered by GitHub Discussions"
-    url: "https://giscus.app/"
     accessed: "2026-07-07"
   - title: "GoatCounter, open web analytics without tracking"
     url: "https://www.goatcounter.com/"
@@ -35,7 +35,6 @@ Algumas notas práticas sobre o site:
 
 - **É um site estático**, construído com o Hugo, um gerador de fonte aberta, e servido como HTML simples. Não há contas, não há barreiras de pagamento e não há publicidade.
 - **A pesquisa** corre inteiramente no seu navegador, com o Pagefind; o índice é construído quando o site é publicado e nenhuma consulta sai do seu dispositivo.
-- **Os comentários** funcionam sobre o giscus, que guarda as discussões no GitHub. Só carregam quando chega até eles, e ler os artigos não exige nada do GitHub.
 - **As estatísticas** são recolhidas com o GoatCounter, um contador sem cookies que não guarda dados pessoais; o rodapé de todas as páginas assinala-o.
 - **As licenças** são deliberadamente abertas: todo o conteúdo editorial é publicado sob a CC BY 4.0 desde o momento da publicação, e o código-fonte do site é de fonte aberta sob a Licença MIT. A página [Licença](/pt/licenca/) explica ambas, incluindo a forma de atribuir a reutilização.
 

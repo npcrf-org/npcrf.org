@@ -32,12 +32,6 @@ other = "consultado a"
 [corrections]
 other = "Correções"
 
-[comments]
-other = "Comentários"
-
-[comments_noscript]
-other = "Os comentários requerem JavaScript; funcionam sobre as Discussões do GitHub."
-
 [page_of]
 other = "Página {{ .Page }} de {{ .Total }}"
 

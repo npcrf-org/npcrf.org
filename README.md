@@ -93,20 +93,16 @@ One-time repository setup:
    (A: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
    `185.199.111.153`; AAAA: `2606:50c0:8000::153` … `2606:50c0:8003::153`),
    then enable **Enforce HTTPS**.
-3. **Discussions**: enable in Settings, keep the *Announcements* category.
-4. **giscus**: install the [giscus app](https://github.com/apps/giscus) on the
-   repository, then copy `repo`, `repoId`, `category`, `categoryId` from
-   [giscus.app](https://giscus.app/) into `[params.giscus]` in `hugo.toml`.
-5. **GoatCounter**: create the site code at
+3. **GoatCounter**: create the site code at
    [goatcounter.com](https://www.goatcounter.com/) (free non-commercial plan)
    and set `params.goatcounter` in `hugo.toml`.
-6. **Funding**: fill the handles in `.github/FUNDING.yml` and the TODO
-   placeholders (handles + IBAN) in `content/support.md`.
-7. **Footer source link**: set `params.repository` in `hugo.toml`.
+4. **Funding**: fill the handles in `.github/FUNDING.yml` and the TODO
+   placeholders (handles + IBAN) in `content/support.md` and
+   `content/support.pt.md`.
 
 ## Performance budget
 
 The home page targets under 50 KB of HTML + CSS combined, with no webfonts and
-no external libraries. JavaScript is limited to five components: the language
+no external libraries. JavaScript is limited to four components: the language
 auto-selection (inline), the theme switcher (inline), Pagefind (search page
-only), giscus (articles only, lazy) and GoatCounter (one cookie-free script).
+only) and GoatCounter (one cookie-free script).

@@ -32,12 +32,6 @@ other = "accessed"
 [corrections]
 other = "Corrections"
 
-[comments]
-other = "Comments"
-
-[comments_noscript]
-other = "Comments require JavaScript; they run on GitHub Discussions."
-
 [page_of]
 other = "Page {{ .Page }} of {{ .Total }}"
 

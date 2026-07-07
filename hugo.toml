@@ -44,16 +44,6 @@ capitalizeListTitles = false
   # Public repository URL, shown in the footer.
   repository = "https://github.com/npcrf-org/npcrf.org"
 
-  # giscus comments (https://giscus.app). Fill in after the GitHub repository
-  # exists, Discussions are enabled and the giscus app is installed; all four
-  # values come from the giscus configuration page. Comments stay hidden until
-  # repo, repoId and categoryId are all set.
-  [params.giscus]
-    repo = ""       # e.g. "npcrf-org/npcrf.org"
-    repoId = ""
-    category = "Announcements"
-    categoryId = ""
-
 [languages.en]
   locale = "en"
   label = "English"

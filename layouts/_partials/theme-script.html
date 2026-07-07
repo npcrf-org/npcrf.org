@@ -14,10 +14,6 @@
       if (forced) return forced;
       return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     }
-    function syncGiscus(theme) {
-      var frame = document.querySelector("iframe.giscus-frame");
-      if (frame) frame.contentWindow.postMessage({ giscus: { setConfig: { theme: theme } } }, "https://giscus.app");
-    }
     function paintButton(btn) {
       var dark = current() === "dark";
       btn.setAttribute("aria-pressed", dark ? "true" : "false");
@@ -38,7 +34,6 @@
         var next = current() === "dark" ? "light" : "dark";
         root.setAttribute("data-theme", next);
         try { localStorage.setItem("theme", next); } catch (e) {}
-        syncGiscus(next);
         paintButton(btn);
       });
     });

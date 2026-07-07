@@ -1,11 +1,14 @@
 ---
 title: "About this site: mission, method, licensing"
 date: 2026-07-07T16:00:00Z
-lastmod: 2026-07-07T16:00:00Z
+lastmod: 2026-07-07T18:30:00Z
 slug: "about-this-site"
 tags: ["meta"]
 draft: false
 description: "What npcrf.org is, how articles are verified here, and how the content and the code are licensed."
+corrections:
+  - date: "2026-07-07"
+    note: "Removed the note describing a comment system; the site launched without one."
 sources:
   - title: "Creative Commons Attribution 4.0 International, legal code"
     url: "https://creativecommons.org/licenses/by/4.0/legalcode.en"
@@ -18,9 +21,6 @@ sources:
     accessed: "2026-07-07"
   - title: "Pagefind, static search library"
     url: "https://pagefind.app/"
-    accessed: "2026-07-07"
-  - title: "giscus, comments powered by GitHub Discussions"
-    url: "https://giscus.app/"
     accessed: "2026-07-07"
   - title: "GoatCounter, open web analytics without tracking"
     url: "https://www.goatcounter.com/"
@@ -35,7 +35,6 @@ A few practical notes about the site:
 
 - **It is a static site**, built with the open-source generator Hugo and served as plain HTML. There are no accounts, no paywalls and no advertising.
 - **Search** runs entirely in your browser, using Pagefind; the index is built when the site is published, and no search query leaves your device.
-- **Comments** run on giscus, which stores discussions on GitHub. They load only when you reach them, and reading articles requires nothing from GitHub.
 - **Statistics** are collected with GoatCounter, a cookie-free counter that stores no personal data; the footer of every page notes this.
 - **Licensing** is deliberately open: all editorial content is released under CC BY 4.0 from the moment of publication, and the site's source code is open source under the MIT License. The [License](/license/) page explains both, including how to attribute reuse.
 
