@@ -61,3 +61,6 @@ other = 'A pesquisa requer JavaScript. Em alternativa, consulte o <a href="%s">a
 
 [search_pending]
 other = "O índice de pesquisa ainda não foi construído; é gerado na publicação do site."
+
+[archive_years]
+other = "Ir para o ano"

@@ -61,3 +61,6 @@ other = 'Search requires JavaScript. You can browse the <a href="%s">archive</a>
 
 [search_pending]
 other = "The search index has not been built yet; it is generated during deployment."
+
+[archive_years]
+other = "Jump to year"

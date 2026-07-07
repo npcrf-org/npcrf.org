@@ -57,20 +57,20 @@ removePathAccents = true
     description = "Independent, non-profit publisher of fact-checked, source-backed articles on current affairs and history."
 
 [[languages.en.menus.main]]
-  name = "Mission"
-  pageRef = "/mission"
-  weight = 10
-[[languages.en.menus.main]]
-  name = "Methodology"
-  pageRef = "/methodology"
-  weight = 20
-[[languages.en.menus.main]]
   name = "Archive"
   pageRef = "/archive"
-  weight = 30
+  weight = 10
 [[languages.en.menus.main]]
   name = "Topics"
   url = "/topics/"
+  weight = 20
+[[languages.en.menus.main]]
+  name = "Mission"
+  pageRef = "/mission"
+  weight = 30
+[[languages.en.menus.main]]
+  name = "Methodology"
+  pageRef = "/methodology"
   weight = 40
 [[languages.en.menus.main]]
   name = "Search"
@@ -102,20 +102,20 @@ removePathAccents = true
     tags = "/temas/:slug/"
 
 [[languages.pt.menus.main]]
-  name = "Missão"
-  pageRef = "/mission"
-  weight = 10
-[[languages.pt.menus.main]]
-  name = "Metodologia"
-  pageRef = "/methodology"
-  weight = 20
-[[languages.pt.menus.main]]
   name = "Arquivo"
   pageRef = "/archive"
-  weight = 30
+  weight = 10
 [[languages.pt.menus.main]]
   name = "Temas"
   url = "/pt/temas/"
+  weight = 20
+[[languages.pt.menus.main]]
+  name = "Missão"
+  pageRef = "/mission"
+  weight = 30
+[[languages.pt.menus.main]]
+  name = "Metodologia"
+  pageRef = "/methodology"
   weight = 40
 [[languages.pt.menus.main]]
   name = "Pesquisa"

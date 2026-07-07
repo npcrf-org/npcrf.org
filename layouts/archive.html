@@ -2,9 +2,17 @@
 <article>
   <h1>{{ .Title }}</h1>
   <div class="content">{{ .Content }}</div>
-  {{ range (where site.RegularPages "Section" "posts").GroupByDate "2006" }}
+  {{ $groups := (where site.RegularPages "Section" "posts").GroupByDate "2006" }}
+  {{ if gt (len $groups) 1 }}
+  <nav class="year-nav" aria-label="{{ i18n "archive_years" }}">
+    <ol>
+      {{ range $groups }}<li><a href="#{{ .Key }}">{{ .Key }}</a></li>{{ end }}
+    </ol>
+  </nav>
+  {{ end }}
+  {{ range $groups }}
   <section class="archive-year">
-    <h2>{{ .Key }}</h2>
+    <h2 id="{{ .Key }}">{{ .Key }}</h2>
     <ul class="archive-list">
       {{ range .Pages }}
       <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time> <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
