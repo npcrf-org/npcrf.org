@@ -1,0 +1,69 @@
+# Portuguese (European) UI strings — Acordo Ortográfico de 1990.
+[skip_to_content]
+other = "Saltar para o conteúdo"
+
+[home_heading]
+other = "Artigos recentes"
+
+[language]
+other = "Idioma"
+
+[theme_toggle]
+other = "Mudar de tema"
+
+[theme_to_dark]
+other = "Mudar para o tema escuro"
+
+[theme_to_light]
+other = "Mudar para o tema claro"
+
+[published]
+other = "Publicado a"
+
+[updated]
+other = "atualizado a"
+
+[sources]
+other = "Fontes"
+
+[accessed]
+other = "consultado a"
+
+[corrections]
+other = "Correções"
+
+[comments]
+other = "Comentários"
+
+[comments_noscript]
+other = "Os comentários requerem JavaScript; funcionam sobre as Discussões do GitHub."
+
+[page_of]
+other = "Página {{ .Page }} de {{ .Total }}"
+
+[newer]
+other = "← Mais recentes"
+
+[older]
+other = "Mais antigos →"
+
+[topic_intro]
+other = "Artigos deste tema, do mais recente para o mais antigo."
+
+[topics_all]
+other = "Todos os temas:"
+
+[footer_license]
+other = 'Os artigos e todo o restante conteúdo textual estão licenciados sob a <a href="https://creativecommons.org/licenses/by/4.0/deed.pt">CC BY 4.0</a>; o código-fonte do site é disponibilizado sob a <a href="https://opensource.org/license/mit/">Licença MIT</a>. Detalhes na página <a href="%s">Licença</a>.'
+
+[footer_privacy]
+other = "Privacidade: as visitas são contadas com o GoatCounter, uma ferramenta de estatísticas sem cookies que não guarda dados pessoais."
+
+[footer_source]
+other = "Código-fonte"
+
+[search_noscript]
+other = 'A pesquisa requer JavaScript. Em alternativa, consulte o <a href="%s">arquivo</a>.'
+
+[search_pending]
+other = "O índice de pesquisa ainda não foi construído; é gerado na publicação do site."

@@ -2,15 +2,15 @@
 time when a published article has none (see the methodology). */ -}}
 {{- with .Params.sources -}}
 <section class="sources" data-pagefind-ignore>
-  <h2>Sources</h2>
+  <h2>{{ i18n "sources" }}</h2>
   <ol>
     {{- range . }}
     <li>
-      {{- with .title }}{{ . }} — {{ end -}}
+      {{- with .title }}{{ . }} · {{ end -}}
       <a href="{{ .url }}">{{ .url }}</a>
       {{- $acc := .accessed -}}
       {{- if $acc -}}
-        {{- if ne (printf "%T" $acc) "string" }}{{ $acc = $acc.Format "2006-01-02" }}{{ end }} (accessed {{ $acc }})
+        {{- if ne (printf "%T" $acc) "string" }}{{ $acc = $acc.Format "2006-01-02" }}{{ end }} ({{ i18n "accessed" }} {{ $acc }})
       {{- end -}}
     </li>
     {{- end }}

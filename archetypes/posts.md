@@ -17,4 +17,7 @@ sources:
 # corrections:
 #   - date: "{{ dateFormat "2006-01-02" .Date }}"
 #     note: ""
+# The site is bilingual: create the European Portuguese twin of this article
+# as content/posts/<name>.pt.md (translated title, slug and description; same
+# date and tags) so the language switcher and auto-detection pair them.
 ---

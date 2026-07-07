@@ -1,7 +1,7 @@
 {{- /* Visible record of post-publication corrections (params.corrections). */ -}}
 {{- with .Params.corrections -}}
 <aside class="corrections">
-  <h2>Corrections</h2>
+  <h2>{{ i18n "corrections" }}</h2>
   <ol>
     {{- range . }}
     {{- $d := .date -}}

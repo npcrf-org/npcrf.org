@@ -1,8 +1,12 @@
 # npcrf.org
 
 Source code of [npcrf.org](https://npcrf.org/), the blog of a non-profit,
-non-governmental organization devoted to honest, factual education. All public
-content is written in English.
+non-governmental organization devoted to honest, factual education. Public
+content is bilingual: international English at the site root and European
+Portuguese under `/pt/`. The language is auto-selected from the reader's
+browser preference (any Portuguese variant gets Portuguese; everything else
+gets English), and a manual EN·PT switcher in the header persists the choice
+in localStorage.
 
 The site is fully static: built with [Hugo](https://gohugo.io/) (extended,
 pinned in the deploy workflow), styled by a bespoke theme with system fonts
@@ -27,7 +31,9 @@ including the attribution formula for reusing content.
 ```
 archetypes/   front matter templates for new content
 assets/css/   the stylesheet (bundled, minified and fingerprinted by Hugo)
-content/      editorial content (CC BY 4.0): posts/ plus standalone pages
+content/      editorial content (CC BY 4.0): posts/ plus standalone pages;
+              *.pt.md files are the European Portuguese translations
+i18n/         UI strings (en.toml, pt.toml)
 layouts/      the bespoke theme: templates and partials
 static/       files copied verbatim: CNAME, robots.txt, favicon.svg
 .github/      deploy workflow and FUNDING.yml
@@ -50,6 +56,12 @@ The `posts` archetype pre-fills the front matter contract: `title`, `date`,
 - **`corrections`** records substantive post-publication changes (date +
   note); it renders as a visible Corrections note on the article. Update
   `lastmod` whenever the article changes.
+- **Translations**: each article gets a Portuguese twin at
+  `content/posts/<name>.pt.md` with translated `title`, `slug` and
+  `description` (same date and tags). Hugo pairs the two files by name; the
+  switcher and the automatic language selection follow that pairing. Articles
+  publish at `/posts/<slug>/` (EN) and `/pt/artigos/<slug>/` (PT); topics at
+  `/topics/` and `/pt/temas/`.
 
 ## Local development
 
@@ -95,6 +107,6 @@ One-time repository setup:
 ## Performance budget
 
 The home page targets under 50 KB of HTML + CSS combined, with no webfonts and
-no external libraries. JavaScript is limited to four components: the theme
-switcher (inline), Pagefind (search page only), giscus (articles only, lazy)
-and GoatCounter (one cookie-free script).
+no external libraries. JavaScript is limited to five components: the language
+auto-selection (inline), the theme switcher (inline), Pagefind (search page
+only), giscus (articles only, lazy) and GoatCounter (one cookie-free script).

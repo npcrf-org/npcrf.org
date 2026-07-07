@@ -1,10 +1,10 @@
 {{- /* giscus comments on GitHub Discussions. Rendered only when fully
-configured in hugo.toml (params.giscus); loads lazily, in English, with the
-theme synced to the site's light/dark mode. */ -}}
+configured in hugo.toml (params.giscus); loads lazily, in the language of the
+page, with the theme synced to the site's light/dark mode. */ -}}
 {{- $g := site.Params.giscus -}}
 {{- if and $g.repo $g.repoId $g.categoryId -}}
 <section class="comments" id="comments">
-  <h2>Comments</h2>
+  <h2>{{ i18n "comments" }}</h2>
   <script>
     (function () {
       var s = document.createElement("script");
@@ -21,7 +21,7 @@ theme synced to the site's light/dark mode. */ -}}
         "data-reactions-enabled": "1",
         "data-emit-metadata": "0",
         "data-input-position": "bottom",
-        "data-lang": "en",
+        "data-lang": {{ .Language.Lang }},
         "data-loading": "lazy",
         "data-theme": (window.npcrfTheme && window.npcrfTheme.current() === "dark") ? "dark" : "light"
       };
@@ -29,6 +29,6 @@ theme synced to the site's light/dark mode. */ -}}
       document.getElementById("comments").appendChild(s);
     })();
   </script>
-  <noscript><p>Comments require JavaScript; they run on GitHub Discussions.</p></noscript>
+  <noscript><p>{{ i18n "comments_noscript" }}</p></noscript>
 </section>
 {{- end -}}

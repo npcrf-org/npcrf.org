@@ -2,6 +2,7 @@
   // Theme switcher. The site follows prefers-color-scheme by default; a manual
   // choice is stored in localStorage and applied here, inline in <head>,
   // before the first paint, to avoid a flash of the wrong theme.
+  // Also persists the manual language choice from the EN·PT switcher.
   (function () {
     var root = document.documentElement;
     var stored = null;
@@ -20,10 +21,16 @@
     function paintButton(btn) {
       var dark = current() === "dark";
       btn.setAttribute("aria-pressed", dark ? "true" : "false");
-      btn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+      btn.setAttribute("aria-label", dark ? {{ i18n "theme_to_light" }} : {{ i18n "theme_to_dark" }});
     }
     window.npcrfTheme = { current: current };
     document.addEventListener("DOMContentLoaded", function () {
+      var links = document.querySelectorAll("[data-setlang]");
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function () {
+          try { localStorage.setItem("lang", this.getAttribute("data-setlang")); } catch (e) {}
+        });
+      }
       var btn = document.getElementById("theme-toggle");
       if (!btn) return;
       paintButton(btn);

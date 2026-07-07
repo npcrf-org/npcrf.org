@@ -1,5 +1,10 @@
 {{ define "main" }}
+{{- /* GitHub Pages serves the root /404.html for every missing URL, in any
+language, so this page carries both languages. */}}
 <h1>Page not found</h1>
 <p>The page you requested does not exist or may have moved.</p>
-<p><a href="{{ site.Home.RelPermalink }}">Back to the home page</a> · <a href="{{ "/search/" | relURL }}">Search the site</a></p>
+<p><a href="/">Back to the home page</a> · <a href="/search/">Search the site</a></p>
+<h2 lang="pt-PT">Página não encontrada</h2>
+<p lang="pt-PT">A página que procura não existe ou pode ter sido movida.</p>
+<p lang="pt-PT"><a href="/pt/">Voltar à página inicial</a> · <a href="/pt/pesquisa/">Pesquisar no site</a></p>
 {{ end }}

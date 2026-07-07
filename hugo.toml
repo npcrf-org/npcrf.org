@@ -1,10 +1,13 @@
 # npcrf.org — Hugo site configuration.
+# Bilingual site: international English at the root, European Portuguese
+# under /pt/. Language is auto-selected client-side from the reader's
+# browser preference, with a manual EN·PT switcher (see _partials/lang-script.html).
 
 baseURL = "https://npcrf.org/"
-locale = "en"
 title = "npcrf.org"
 timeZone = "UTC"
 copyright = "© 2026 npcrf.org"
+defaultContentLanguage = "en"
 
 # Keep the generated HTML free of the Hugo generator meta tag.
 disableHugoGeneratorInject = true
@@ -18,7 +21,8 @@ capitalizeListTitles = false
 [taxonomies]
   tag = "tags"
 
-# Stable slugs come from front matter; tags publish under /topics/.
+# Stable slugs come from front matter; tags publish under /topics/ (English)
+# and /pt/temas/ (Portuguese, overridden per language below).
 [permalinks.page]
   posts = "/posts/:slug/"
 [permalinks.taxonomy]
@@ -33,51 +37,99 @@ capitalizeListTitles = false
   unsafe = false
 
 [params]
-  description = "Independent, non-profit publisher of fact-checked, source-backed articles on current affairs and history."
-
   # GoatCounter site code: the SUBDOMAIN part of https://SUBDOMAIN.goatcounter.com.
   # Leave empty to disable analytics entirely (the footer privacy note follows it).
   goatcounter = ""
 
-  # Public repository URL, shown in the footer once it exists. Leave empty to hide.
-  repository = ""
+  # Public repository URL, shown in the footer.
+  repository = "https://github.com/npcrf-org/npcrf.org"
 
   # giscus comments (https://giscus.app). Fill in after the GitHub repository
   # exists, Discussions are enabled and the giscus app is installed; all four
   # values come from the giscus configuration page. Comments stay hidden until
   # repo, repoId and categoryId are all set.
   [params.giscus]
-    repo = ""       # e.g. "OWNER/npcrf.org"
+    repo = ""       # e.g. "npcrf-org/npcrf.org"
     repoId = ""
     category = "Announcements"
     categoryId = ""
 
-[menus]
-  [[menus.main]]
-    name = "Mission"
-    pageRef = "/mission"
-    weight = 10
-  [[menus.main]]
-    name = "Methodology"
-    pageRef = "/methodology"
-    weight = 20
-  [[menus.main]]
-    name = "Archive"
-    pageRef = "/archive"
-    weight = 30
-  [[menus.main]]
-    name = "Topics"
-    url = "/topics/"
-    weight = 40
-  [[menus.main]]
-    name = "Search"
-    pageRef = "/search"
-    weight = 50
-  [[menus.main]]
-    name = "Contact"
-    pageRef = "/contact"
-    weight = 60
-  [[menus.main]]
-    name = "Support"
-    pageRef = "/support"
-    weight = 70
+[languages.en]
+  locale = "en"
+  label = "English"
+  weight = 1
+  title = "npcrf.org"
+  [languages.en.params]
+    description = "Independent, non-profit publisher of fact-checked, source-backed articles on current affairs and history."
+
+[[languages.en.menus.main]]
+  name = "Mission"
+  pageRef = "/mission"
+  weight = 10
+[[languages.en.menus.main]]
+  name = "Methodology"
+  pageRef = "/methodology"
+  weight = 20
+[[languages.en.menus.main]]
+  name = "Archive"
+  pageRef = "/archive"
+  weight = 30
+[[languages.en.menus.main]]
+  name = "Topics"
+  url = "/topics/"
+  weight = 40
+[[languages.en.menus.main]]
+  name = "Search"
+  pageRef = "/search"
+  weight = 50
+[[languages.en.menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 60
+[[languages.en.menus.main]]
+  name = "Support"
+  pageRef = "/support"
+  weight = 70
+
+[languages.pt]
+  locale = "pt-PT"
+  label = "Português"
+  weight = 2
+  title = "npcrf.org"
+  [languages.pt.params]
+    description = "Publicação independente e sem fins lucrativos de artigos verificados e assentes em fontes, sobre temas da atualidade e temas históricos."
+  [languages.pt.permalinks.page]
+    posts = "/artigos/:slug/"
+  [languages.pt.permalinks.taxonomy]
+    tags = "/temas/"
+  [languages.pt.permalinks.term]
+    tags = "/temas/:slug/"
+
+[[languages.pt.menus.main]]
+  name = "Missão"
+  pageRef = "/mission"
+  weight = 10
+[[languages.pt.menus.main]]
+  name = "Metodologia"
+  pageRef = "/methodology"
+  weight = 20
+[[languages.pt.menus.main]]
+  name = "Arquivo"
+  pageRef = "/archive"
+  weight = 30
+[[languages.pt.menus.main]]
+  name = "Temas"
+  url = "/pt/temas/"
+  weight = 40
+[[languages.pt.menus.main]]
+  name = "Pesquisa"
+  pageRef = "/search"
+  weight = 50
+[[languages.pt.menus.main]]
+  name = "Contacto"
+  pageRef = "/contact"
+  weight = 60
+[[languages.pt.menus.main]]
+  name = "Apoio"
+  pageRef = "/support"
+  weight = 70

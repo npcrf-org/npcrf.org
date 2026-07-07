@@ -92,6 +92,10 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 .site-nav a { color: var(--muted); text-decoration: none; }
 .site-nav a:hover { color: var(--fg); text-decoration: underline; }
 .site-nav a[aria-current="page"] { color: var(--fg); font-weight: 600; }
+.lang-switch { display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; }
+.lang-switch a { color: var(--muted); text-decoration: none; }
+.lang-switch a:hover { color: var(--fg); text-decoration: underline; }
+.lang-switch span[aria-current] { color: var(--fg); font-weight: 600; }
 #theme-toggle {
   background: none; border: 1px solid var(--border); border-radius: 6px;
   color: var(--muted); padding: 0.3rem 0.45rem; cursor: pointer; line-height: 0;
@@ -102,6 +106,7 @@ figcaption { color: var(--muted); font-size: 0.9rem; }
 
 /* ---------- Home and lists ---------- */
 .lede { color: var(--muted); margin: 1.6rem 0 0; }
+.lede p { margin: 0.2rem 0; }
 .post-list { list-style: none; padding: 0; margin: 1.5rem 0; }
 .post-item { margin-bottom: 1.9rem; }
 .post-item-title { font-size: 1.25rem; margin: 0 0 0.15rem; }

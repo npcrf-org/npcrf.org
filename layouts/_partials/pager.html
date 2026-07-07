@@ -1,8 +1,8 @@
 {{- $p := .Paginator -}}
 {{- if gt $p.TotalPages 1 -}}
 <nav class="pager" aria-label="Pagination">
-  {{ if $p.HasPrev }}<a href="{{ $p.Prev.URL }}" rel="prev">← Newer</a>{{ else }}<span aria-hidden="true"></span>{{ end }}
-  <span class="muted">Page {{ $p.PageNumber }} of {{ $p.TotalPages }}</span>
-  {{ if $p.HasNext }}<a href="{{ $p.Next.URL }}" rel="next">Older →</a>{{ else }}<span aria-hidden="true"></span>{{ end }}
+  {{ if $p.HasPrev }}<a href="{{ $p.Prev.URL }}" rel="prev">{{ i18n "newer" }}</a>{{ else }}<span aria-hidden="true"></span>{{ end }}
+  <span class="muted">{{ i18n "page_of" (dict "Page" $p.PageNumber "Total" $p.TotalPages) }}</span>
+  {{ if $p.HasNext }}<a href="{{ $p.Next.URL }}" rel="next">{{ i18n "older" }}</a>{{ else }}<span aria-hidden="true"></span>{{ end }}
 </nav>
 {{- end -}}

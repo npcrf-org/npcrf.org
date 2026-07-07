@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+  {{ partial "lang-script.html" . }}
   {{ partial "theme-script.html" . }}
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
   {{- $desc := or .Description .Params.description "" }}
@@ -11,6 +12,14 @@
   {{- $desc = $desc | default site.Params.description }}
   <meta name="description" content="{{ $desc }}">
   <link rel="canonical" href="{{ .Permalink }}">
+  {{- if .IsTranslated }}
+  {{- range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}">
+  {{- end }}
+  {{- range .AllTranslations }}{{ if eq .Language.Lang "en" }}
+  <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+  {{- end }}{{ end }}
+  {{- end }}
   <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
   {{ with .OutputFormats.Get "rss" -}}
   <link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">
@@ -31,7 +40,7 @@
   {{ end }}{{ end }}
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">{{ i18n "skip_to_content" }}</a>
   {{ partial "header.html" . }}
   <main id="main" class="wrap">
     {{ block "main" . }}{{ end }}

@@ -1,6 +1,6 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-<p class="post-meta">Articles on this topic, newest first. All topics: <a href="{{ "/topics/" | relURL }}">Topics</a>.</p>
+<p class="post-meta">{{ i18n "topic_intro" }} {{ i18n "topics_all" }} {{ with site.GetPage "/tags" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}.</p>
 {{ .Content }}
 <ul class="post-list">
   {{ range .Pages.ByDate.Reverse }}{{ partial "post-item.html" . }}{{ end }}

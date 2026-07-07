@@ -1,6 +1,6 @@
 {{ define "main" }}
-<h1 class="visually-hidden">{{ site.Title }} — latest articles</h1>
-<p class="lede">{{ site.Params.description }} Read the <a href="{{ (site.GetPage "/mission").RelPermalink }}">mission</a> and the <a href="{{ (site.GetPage "/methodology").RelPermalink }}">methodology</a>.</p>
+<h1 class="visually-hidden">{{ site.Title }} — {{ i18n "home_heading" }}</h1>
+{{ with .Content }}<div class="lede">{{ . }}</div>{{ end }}
 {{ $posts := where site.RegularPages "Section" "posts" }}
 {{ $pag := .Paginate $posts }}
 <ul class="post-list">

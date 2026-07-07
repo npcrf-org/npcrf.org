@@ -1,0 +1,29 @@
+{{- /* Language auto-selection, inline in <head> before first paint.
+A manual choice (localStorage "lang") always wins; otherwise the browser
+language decides: any Portuguese variant (pt, pt-PT, pt-BR, pt-AO, …) gets
+European Portuguese, everything else gets English. Redirects only when the
+current page has a translation in the wanted language, so untranslated pages
+never break. The manual EN·PT switcher in the header persists the choice. */ -}}
+{{- $alt := dict -}}
+{{- range .AllTranslations }}{{ $alt = merge $alt (dict .Language.Lang .RelPermalink) }}{{ end -}}
+<script>
+  (function () {
+    var alt = {{ $alt | jsonify | safeJS }};
+    var cur = {{ .Language.Lang }};
+    var stored = null;
+    try { stored = localStorage.getItem("lang"); } catch (e) {}
+    var want;
+    if (stored === "en" || stored === "pt") {
+      want = stored;
+    } else {
+      var langs = navigator.languages || [navigator.language || ""];
+      var pt = false;
+      for (var i = 0; i < langs.length; i++) {
+        if (/^pt(-|$)/i.test(String(langs[i]))) { pt = true; break; }
+        if (/^en(-|$)/i.test(String(langs[i]))) { break; }
+      }
+      want = pt ? "pt" : "en";
+    }
+    if (want !== cur && alt[want]) location.replace(alt[want]);
+  })();
+</script>
